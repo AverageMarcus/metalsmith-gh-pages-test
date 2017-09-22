@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node index.js",
     "start": "npm run -s build && ./node_modules/.bin/http-server ./build",
-    "deploy": "./node_modules/.bin/gh-pages -d build"
+    "deploy": "./node_modules/.bin/gh-pages -d build",
+    "watch": "./node_modules/.bin/http-server ./build & ./node_modules/.bin/nodemon --exec \"npm run build\" -e js,html,css,md --ignore build/"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "nodemon": "^1.12.1"
   }
 }
